@@ -1,0 +1,12 @@
+{"devEUI_uplink": {
+  "time": "$timestamp",
+  "customerID": "DSMeritve",
+  "devEUI": "$assetId",
+  "payload": {
+    "id": "$assetId",
+    "captured": "$timestamp",
+    "valueMT": "$valueMT",
+    "valueEnergy": "$valueEnergy",
+    "valuePower": "$valuePower"}
+}}
+

@@ -1,0 +1,17 @@
+{
+  "searchContextItems": [],
+  "items": [
+    {
+      "operation": "And",
+      "keyWord": "$keyword",
+      "columnName": "All",
+      "comparison": "Like",
+      "enumeratorName": null
+    }
+  ],
+  "view": "AssetOverview",
+  "searchContextOptions": [],
+  "pageSize": 25,
+  "sort": [],
+  "page": 0
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <env type ="test">
+        <usernameIngestion>dsupload@comtrade.com</usernameIngestion>
+        <passwordIngestion>Forensixx1234</passwordIngestion>
+        <dateFrom>0</dateFrom>
+        <dateTo>2020-02-29</dateTo>
+        <dataSources>69 70 73</dataSources>
+        <urlGETLast>https://forensixxapitest.azurewebsites.net/v1/asset/assetId/datasource/last</urlGETLast>
+        <token>Bearer BTX_DFyor5Wtk3UzRHEFacTXggMYIf9up4iNnoJdbPwCfFM6fVvr5BpuyrwDOG_JNz1v97QxdabfP7wd5N48YVm-WVRuu_2ooSB2qqzVV61o6VAmAFf6TMP_1bZgRJape1n4KCNcAlqm_X8mRPpk6-Dzao63DRE2qHu7V3E6r8hA3tD3yAmwhaWHSUd8Yxb5H8C50BqxNLbiAKUnp7owprN4nv19UZM8JRYbD3rEGxS04HVUoVRcBGtooXOQgwx2l8GljNg1nlaNJMvX36D4bG4ulZZzkx0pKuEqlg-FelxWgjz2rieEMfRF2ped_g7R3rZqPPYjiSYPBD6eborx8jpvSotbDBl8tiRiWlPF2BRRIoqvBInJpiEWYfTNPSxHjTgFUVTONpf_uV3BsknfqE3ASDgSjv3wKuJY3oJVa_AF6DpCTSurZIhbPNX1mg_b</token>
+    </env>
+</config>
