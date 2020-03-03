@@ -1,5 +1,7 @@
 import groovy.json.JsonSlurper
 
+import java.time.LocalDate
+
 Config cfg = new Config()
 cfg = cfg.readXmlConfig("config.xml","test")
 
@@ -40,27 +42,38 @@ def slurper = new JsonSlurper()
 def jsonObject = slurper.parseText(respGET)
 def lastTimestamp = jsonObject.timestamp[0] // returns list of all timestamps
 
-Map dataSources = [69:"MT", 70:"VT",73:"Energy"]
+
+
+Map dataSources = [69:"MT", 70:"VT",73:"Energy"] //useless as one cannot know which ones are which ad-hoc for all types ..just here to make it clearer.
 
 def values = jsonObject.values
 println "Last timestamp used :$lastTimestamp"
 
+
+/** Map of datasources compared  **/
 println "Values =" +values[0].datasourceId
 println "MT values :$values"
-Map dataSourceValues = [:]
+
+Map dataSourceValues = ut.getLatestDataSourcesValues(dataSources,respGET)
+
+/*
 dataSources.each { entry ->
     for (int i=0;i<values.size();i++) {
         println "Entry key $entry.key"
-        def dsId = (String)values[i].datasourceId
-        if (entry.key == dsId) {
+        String dsId = values[i].datasourceId
+        String tmp = dsId.replaceAll("\\[|\\]", "")
+        println "tmp $tmp"
+        if (entry.key == tmp.toInteger()) {
             dataSourceValues.put(entry.key,values[i].value)
         }
     }
-}
+}*/
 println "Size ="+dataSourceValues.size()
 dataSourceValues.each {entry ->
     println "$entry.key =$entry.value"
 }
+
+
 
 //assetNames
 def assetNames = ut.readAssetNames("AssetIds.txt")
@@ -70,6 +83,20 @@ assetNames.each {line ->
     }
     else println "$line"
 }
+
+
+String s = "2020-02-01 01:00:00"
+String e = "2020-03-01 05:00:00"
+LocalDate start = LocalDate.parse(s);
+LocalDate end = LocalDate.parse(e);
+List<LocalDate> totalDates = new ArrayList<>();
+while (!start.isAfter(end)) {
+    totalDates.add(start);
+    start = start.plusDays(1);
+}
+for (d in totalDates) { println "Date: $d "}
+
+
 
 
 

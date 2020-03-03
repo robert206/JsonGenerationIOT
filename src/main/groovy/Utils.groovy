@@ -1,3 +1,4 @@
+import groovy.json.JsonSlurper
 import groovy.text.GStringTemplateEngine
 
 class Utils {
@@ -38,6 +39,8 @@ class Utils {
         }
     }
 
+
+
     //send POST request filter
     def sendPOSTRequest (String url,String body,String token) {
         def response = restRequest(url,"POST","application/json",body,token)
@@ -65,6 +68,8 @@ class Utils {
         return assetId
     }
 
+
+
     /**read AssetIds-names from file and return it as List **/
     List<String> readAssetNames (String fileName) {
         ClassLoader classLoader = getClass().getClassLoader();
@@ -75,6 +80,30 @@ class Utils {
        def assetNames = file.readLines()
         return assetNames
     }
+
+
+
+    /** get latest MT ,VT,Energy values **/
+    Map getLatestDataSourcesValues (Map dataSourceMap, String response) {
+        Map dataSourceValues = [:]
+        def slurper = new JsonSlurper()
+        def jsonObject = slurper.parseText(response)
+        //traverse json response and compare datasourceids from given map and if match then add last value into map
+        dataSourceMap.each { entry ->
+            for (int i=0; i<jsonObject.values.size(); i++) {
+                println "Entry key $entry.key"
+                String dsId = jsonObject.values[i].datasourceId
+                String tmp = dsId.replaceAll("\\[|\\]", "")
+                println "tmp $tmp"
+                if (entry.key == tmp.toInteger()) {
+                    dataSourceValues.put(entry.key,jsonObject.values[i].value)
+                }
+            }
+        }
+        return dataSourceValues // map with latest datasource values
+    }
+
+
 
 
 }

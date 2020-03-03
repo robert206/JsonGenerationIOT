@@ -54,15 +54,6 @@ class Config {
     }
 
 
-    /** list for data sources**/
-    def getDataSources() {
-        return dataSources
-    }
-
-    void setDataSources(dataSources) {
-        this.dataSources = dataSources
-    }
-    def dataSources = []
 
     /**url for GET "last" request **/
     def urlGETLast
@@ -91,7 +82,6 @@ class Config {
                 cfg.setPasswordIngestion((String) config.env[i].passwordIngestion)
                 cfg.setDateFrom((String) config.env[i].dateFrom)
                 cfg.setDateTo((String) config.env[i].dateTo)
-                cfg.setDataSources((String) config.env[i].dataSources)
                 cfg.setUrlGETLast((String) config.env[i].urlGETLast)
                 cfg.setToken((String) config.env[i].token)
             }
