@@ -1,6 +1,11 @@
 import groovy.json.JsonSlurper
 
+import java.time.Duration
+import java.time.Instant
 import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.temporal.ChronoUnit
 
 Config cfg = new Config()
 cfg = cfg.readXmlConfig("config.xml","test")
@@ -84,17 +89,15 @@ assetNames.each {line ->
     else println "$line"
 }
 
-
-String s = "2020-02-01 01:00:00"
-String e = "2020-03-01 05:00:00"
-LocalDate start = LocalDate.parse(s);
-LocalDate end = LocalDate.parse(e);
-List<LocalDate> totalDates = new ArrayList<>();
-while (!start.isAfter(end)) {
-    totalDates.add(start);
-    start = start.plusDays(1);
+Instant currentTime = Instant.parse(lastTimestamp)
+22.times {
+    Instant currentTime = currentTime + startTime.plus(1,ChronoUnit.HOURS)
 }
-for (d in totalDates) { println "Date: $d "}
+
+Instant i2 = i.plus(1, ChronoUnit.HOURS)
+System.out.println(i2);
+
+
 
 
 

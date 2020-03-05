@@ -6,6 +6,6 @@
         <dateFrom>0</dateFrom>
         <dateTo>2020-02-29</dateTo>
         <urlGETLast>https://forensixxapitest.azurewebsites.net/v1/asset/assetId/datasource/last</urlGETLast>
-    <token>Zb2H45fbvUzoNe27G88vM30EIBofrvbqQvTw8SI9IBA63fII9Gyl1P7AG-81YZ5pAUJqBJwYr0fJR6NfTFk4lEsxT3f62IKwdnkYyweeQswilbQfWZ6YPfIMvOn8XGsq7_kCORXAvjfWfFyPJfkmGFuGbVr0ZrIPCuUCGd6s447f2HD69NDaf3XsSehR_UikHhIXUEnIJWkXZ2v4T4WjtIN6xZNdyXstyzg893582DibOM5JWkz9-LZoBDrKZnXS3Q-ZQb-cZaOwmNoVJOJtLbxtM8f-XqfT4gyJDzgIi3Ry4Omcd18D0VnLsXe57O92W20uirtgHtaRcJ0nvJe_dY2ENAjsuA4jTEuOEjzgeTYm7q1Cu83yy9TpnGScjfdqLkFbtfhFrhtX9xZp1wrIEjHuzbPEqcBN9himtZT8T0__wjs060JmTXyLz0snZAta</token>
+    <token>Bearer IVElqf3yIuYYpuW9m8qGLxoUT_z4tlAVkYMunwTCqN2tm-N5MCdRFE_X5V5Ma3IvIug01dynOwSS92FdL_ZpDCP5tG5je-AwnPeSk7ItBtm5iFN8WYHnVDtLAgT-DFakcW96-tXI3T-KHGgIZFnE9pkLK2ZOkzdAsfP8J5WwkxyGr42J8-LZTmUUc87DT0NjqOHb8W9bUtZIecxG9WJuI3X67vOO7ghrXlMG6rbWJubHQB4qC9RVwEdlWuaNpqmyvNuyd1j7ZA2uK3_A84uWlYaDcaHd2vf9u-8ggEnDqWrQtGtjbjbfRfaZW7PE5vQaH_SitLK0T4wfD9JhhwhwmQhR_1Dw-y0uKKFNhSARGWGL_6vB7wDX6ioozmU7VFDOhUcjxQL0xVhyYdzO1W8OYcFcVjP4XT4kCdZdHl7d43FhpblAAQzAgtMknNWv2jnr</token>
     </env>
 </config>
