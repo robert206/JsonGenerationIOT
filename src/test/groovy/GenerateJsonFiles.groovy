@@ -1,36 +1,33 @@
 import groovy.json.JsonSlurper
 
-import java.text.DecimalFormat
 
 Config cfg = new Config()
 cfg = cfg.readXmlConfig("config.xml","test")
 Utils ut = new Utils()
 
-
+/****************************************************************************************************************************/
 def dataSources = [69:"MT", 70:"VT",73:"Energy"]
-
 def assetNames = ut.readAssetNames("AssetIds.txt")
+/***************************************************************************************************************************/
+
+
 
 List<String> timestamps = new ArrayList<>()
-
-
 String fileName
 File outputFile
 String rootFolder = System.getProperty("user.dir")
 String newline = System.getProperty("line.separator")
+def fileNames = []
 
 for (assetName in assetNames) {
-    println "AssetName = $assetName"
 
     //if it is number then it is actual assetName else its String thus Concentrator or any other group name
     if (assetName.isNumber()) {
+        println "........Generating json data for Asset = $assetName............"
         String response = ut.filterPOSTRequest(assetName,cfg.getToken())
-        println ("Response = $response")
         def assetId = ut.parseAssetId(response) //assetId parsed from filter request
-        println "Assetid = $assetId"
         String urlGET =  cfg.urlGETLast.replaceAll("assetId","$assetId") // replace placeholder in GET http address with current assetId
         String respGET = ut.sendGETRequest(urlGET,cfg.token) // do GET request and save response
-        println( "respGet $respGET")
 
         /** New json slurper for accessing json node values **/
         def slurper = new JsonSlurper()
@@ -88,17 +85,28 @@ for (assetName in assetNames) {
     else {
         fileName = assetName
         //outputFile = new File("$rootFolder/target/$fileName")
-        outputFile = new File("D:\\JobRepos\\ForensixxDataIngest\\Forensixx\\target\\$fileName")
+        outputFile = new File("$rootFolder\\$fileName")//make it relative afterwards
+        println("$rootFolder\\$fileName")
         if (outputFile.exists()) {
+            println "Filename = $assetName $outputFile.path"
             outputFile << "$newline ]"
         }
         outputFile.createNewFile()
+        fileNames << outputFile.path
         outputFile << "[ $newline"
     }
 
-
-
 }
+
+fileNames.each {
+    println "file: $it"
+}
+
+String content = new Scanner(new File(fileNames[0])).useDelimiter("\\Z").next();
+String withoutLastCharacter = content.substring(0, content.size() - 1)
+File outFile = new File("drek")
+outFile << withoutLastCharacter
+outFile << "]"
 
 
 
