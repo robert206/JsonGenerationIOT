@@ -1,6 +1,3 @@
 ConcentratorQ13
 19081128
 19081113
-ConcentratorQ14
-1234343
-2465756

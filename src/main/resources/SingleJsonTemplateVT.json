@@ -5,7 +5,7 @@
   "payload": {
     "id": "$assetId",
     "captured": "$timestamp",
-    "valueMT": "$valueMT",
+    "valueVT": "$valueVT",
     "valueEnergy": "$valueEnergy",
     "valuePower": "$valuePower"}
 }}
