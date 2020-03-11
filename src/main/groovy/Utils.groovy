@@ -158,7 +158,8 @@ class Utils {
         return list
     }
 
-    def createFinalJsonFiles (def listOfFiles) {
+    /** generate final json files **/
+    def createFinalJsonFiles (def listOfFiles,def timestamp) {
         //def newFiles = []
         for (file in listOfFiles) {
             File fh = new File(file)
@@ -166,7 +167,7 @@ class Utils {
             String fileContent = sc.useDelimiter("\\Z").next()
            // String fileContent = new Scanner(fh).useDelimiter("\\Z").next()
             String fileContentParsed = fileContent.substring(0, fileContent.size() - 1)
-            File newFile = new File(file +".json")
+            File newFile = new File(file + "_" + timestamp +".json")
             newFile << fileContentParsed
             newFile << "]"
             sc.close()

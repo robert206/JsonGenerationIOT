@@ -86,7 +86,6 @@ for (assetName in assetNames) {
         fileName = assetName
         //outputFile = new File("$rootFolder/target/$fileName")
         outputFile = new File("$rootFolder\\$fileName")//make it relative afterwards
-        println("$rootFolder\\$fileName")
 
         outputFile.createNewFile()
         fileNames << outputFile.path //store filenames for last step of trimming and adding chars
@@ -98,8 +97,9 @@ for (assetName in assetNames) {
 fileNames.each {
     println "file: $it"
 }
+def ts = cfg.dateTo.split("T")[0]
 
-ut.createFinalJsonFiles(fileNames)
+ut.createFinalJsonFiles(fileNames,ts)
 
 
 
