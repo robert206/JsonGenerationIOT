@@ -23,7 +23,7 @@ for (assetName in assetNames) {
 
     //if it is number then it is actual assetName else its String thus Concentrator or any other group name
     if (assetName.isNumber()) {
-        println "........Generating json data for Asset = $assetName............"
+        println "........Generating json data for Asset = $assetName and time period $cfg.dateFrom -$cfg.dateTo............"
         String response = ut.filterPOSTRequest(assetName,cfg.getToken())
         def assetId = ut.parseAssetId(response) //assetId parsed from filter request
         String urlGET =  cfg.urlGETLast.replaceAll("assetId","$assetId") // replace placeholder in GET http address with current assetId
@@ -92,7 +92,7 @@ for (assetName in assetNames) {
             outputFile << "$newline ]"
         }
         outputFile.createNewFile()
-        fileNames << outputFile.path
+        fileNames << outputFile.path //store filenames for last step of trimming and adding chars
         outputFile << "[ $newline"
     }
 
