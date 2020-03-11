@@ -87,10 +87,7 @@ for (assetName in assetNames) {
         //outputFile = new File("$rootFolder/target/$fileName")
         outputFile = new File("$rootFolder\\$fileName")//make it relative afterwards
         println("$rootFolder\\$fileName")
-        if (outputFile.exists()) {
-            println "Filename = $assetName $outputFile.path"
-            outputFile << "$newline ]"
-        }
+
         outputFile.createNewFile()
         fileNames << outputFile.path //store filenames for last step of trimming and adding chars
         outputFile << "[ $newline"
@@ -102,11 +99,7 @@ fileNames.each {
     println "file: $it"
 }
 
-String content = new Scanner(new File(fileNames[0])).useDelimiter("\\Z").next();
-String withoutLastCharacter = content.substring(0, content.size() - 1)
-File outFile = new File("drek")
-outFile << withoutLastCharacter
-outFile << "]"
+ut.createFinalJsonFiles(fileNames)
 
 
 

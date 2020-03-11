@@ -158,6 +158,22 @@ class Utils {
         return list
     }
 
+    def createFinalJsonFiles (def listOfFiles) {
+        //def newFiles = []
+        for (file in listOfFiles) {
+            File fh = new File(file)
+            Scanner sc = new Scanner(fh)
+            String fileContent = sc.useDelimiter("\\Z").next()
+           // String fileContent = new Scanner(fh).useDelimiter("\\Z").next()
+            String fileContentParsed = fileContent.substring(0, fileContent.size() - 1)
+            File newFile = new File(file +".json")
+            newFile << fileContentParsed
+            newFile << "]"
+            sc.close()
+            fh.delete()
+        }
+    }
+
 
 
 
