@@ -18,6 +18,10 @@ File outputFile
 String rootFolder = System.getProperty("user.dir")
 String newline = System.getProperty("line.separator")
 def fileNames = []
+/** these values are used if there is no previous records in db (messages table) **/
+def startingMT = "1.0"
+String startingVT = "1.0"
+String startingEnergy = "1.0"
 
 for (assetName in assetNames) {
 
@@ -45,16 +49,22 @@ for (assetName in assetNames) {
 
 
         timestamps = ut.generateTimestampList(startTime,endTime)//get all timestamps generated in list
-        /** MT values **/
-        def startingMT = dataSourceValues.get(69)
+        /** mt values **/
+        if (dataSourceValues.containsKey(69)) {
+            startingMT = dataSourceValues.get(69)
+        }
         def MTValues = ut.generateValues(timestamps.size(),startingMT)
 
         /** VT values **/
-        def startingVT = dataSourceValues.get(70)
+        if (dataSourceValues.containsKey(70)) {
+            startingVT = dataSourceValues.get(70)
+        }
         def VTValues = ut.generateValues(timestamps.size(),startingVT)
 
         /** Energy values **/
-        def startingEnergy = dataSourceValues.get(73)
+        if (dataSourceValues.containsKey(73)) {
+            startingEnergy = dataSourceValues.get(73)
+        }
         def EnergyValues = ut.generateValues(timestamps.size(),startingEnergy)
 
         /** traverse every timestamp **/
@@ -100,6 +110,7 @@ fileNames.each {
 def ts = cfg.dateTo.split("T")[0]
 
 ut.createFinalJsonFiles(fileNames,ts)
+println ("All DONE.Cheerish this moment with dancing.Files are all test/groovy folder.")
 
 
 

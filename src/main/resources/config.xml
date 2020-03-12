@@ -3,9 +3,9 @@
     <env type ="test">
         <usernameIngestion>dsupload@comtrade.com</usernameIngestion>
         <passwordIngestion>Forensixx1234</passwordIngestion>
-        <dateFrom>2020-02-01T01:10:00Z</dateFrom>
-        <dateTo>2020-02-29T22:10:00Z</dateTo>
+        <dateFrom>2020-01-01T01:10:00Z</dateFrom>
+        <dateTo>2020-01-31T22:10:00Z</dateTo>
         <urlGETLast>https://forensixxapitest.azurewebsites.net/v1/asset/assetId/datasource/last</urlGETLast>
-        <token>Bearer FuHoou8igvIflQAdlj_aw9Cs1Qo61QPz2QFpMIOxvV6GDHZ73FdBvBrIMGMthtcezFA2QiHWgDjkpCx5BM-w4jkZRPxV1EQYsuE74Kep2t0I2M9CBlVgxvlWlPxJX1WgxP7wYh4IEZ8gd6RG28s-A0254Mk28gKnD9LBwbXid0UCZJxOh7Ij_A8M19Ai2be1WK801e9Pv2-vF7ypi2-Pa76EZyfNSCL_N9NWmH9vcGS_6XpZtUcRzFWR4dIU0hL0rdCVQU35QJYp8KJ6DjLM4xDHCopwH_SGcrVCsKVWCCtPvYBfE_OB9LrGnbHCpf8ai6bj0vDR_DAgWqQ8zFD_gqHct5gek_acepwNVMsCQGMqjz5UyYbarC6awm00Aas4nRYNKsKJwuYhbOcWYCspeT57MRtqrkdJBYMBzswg9UNwn61FBE75Bsd9uPLvk1Pv</token>
+        <token>Bearer UGGLkTn1MoKx4nSZq0ST_5RRm7a5T2cSVaAvLeek1Az2vtoYIBoLerI94EIUnh6FNReE3yz2dI0doEO6u0DPxYuqSTd82fc7vp-Cepmt8RZnnCmeOYPtuhoSA43TNm23CPSoO93l5Z9cW2O-trpWVOkawLBjNMqF-93uJ38gDa2xt8rGwQdNfe8xzenzpv8zs1mM-314aypXP1ncqq-R_Ma5VgsOq3hkRBLYHWs8J27mzekmHUo4jbgSPaPXJdd-CpP7rDp9irusKTCsvryhRQPgkag-9rTupjVipNVMHQKlQ1ofyFgs96zxL6DdsWwndpFtzBJ5IX1y5UBcnH62Q2Gk_VN7VQMVtj43FwJYnCyg7SFOCsl5mYKPZUXcKjfmXmJNZGC1UA1rbJxU8SNOrfsrNnBh0wjCLMUTq7c4WWQA89Qw2ssO71-0_gdqw0Sq</token>
     </env>
 </config>

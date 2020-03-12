@@ -161,6 +161,7 @@ class Utils {
     /** generate final json files **/
     def createFinalJsonFiles (def listOfFiles,def timestamp) {
         //def newFiles = []
+        println ("...Moving files around.Planting trees....")
         for (file in listOfFiles) {
             File fh = new File(file)
             Scanner sc = new Scanner(fh)
